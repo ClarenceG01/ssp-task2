@@ -1,0 +1,7 @@
+- trim() input fields to remove space
+- request.errormessage
+- use parseInt for numbers
+- in getting data from the form, use .query instead of .body
+- validate necessary data from form
+
+-object.external module

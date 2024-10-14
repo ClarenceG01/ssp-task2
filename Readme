@@ -1,0 +1,70 @@
+**SSP 2**
+**INTRODUCTION**
+
+1. FORM
+   -allow user to order a book from the 3
+   -enter the number of copies
+2. APP
+   -validates the user has selected a book and entered a legal number of copies
+   -generates a "receipt page" that displays total cost of order. Include Tax
+3. BOOKS
+   -represent books in an array of objects
+   -represent books in this format:
+   var products=[
+   {ISBN:"iufif",title:"ururur",price:"hcech",image_file="ncncnjcdjn"}
+   ]
+4. MODEL FUNCTIONS
+   -function that returns the entire array of books
+   -function that searches the array for one with provided ISBN
+
+   **ARRAY AND FUNCTIONS IN DIFFERENT FILES, 3 FILES. ONE FOR ARRAY, TWO FRO FUNCTIONS**
+
+**ORDER FORM**
+
+- html form page
+- url "/"
+- Dropdown with the three books, user selects one
+- Value field for each option should be their ISBN
+- first dropdown option "Select a Book" with their value as 0 or "none"
+- Number of copies
+
+- pressing button should cause the form to be submitted to a function called order
+
+**NODEJS APP**
+
+- get ISBN and no. of copies from request when form is submitted
+- ISBN and no. of copies should be validated. Return error if invalid
+- use model function to search for the book corresponding to ISBN submitted. This gets its title and price.
+- get total price. BookPrice _ no. of books _ tax
+- render receipt page
+
+**STEPS**
+
+1. Extracting the Parameters
+
+- get parameters from body
+- store these(isbn and no. of copies) in request
+- next()
+
+2. Validate the Parameters
+
+- if no book is selected, display "Must select a book". if isbn===0 ||isbn ==="none"
+- if copies is blank, not a number or is less than 1, display "Must purchase at least one copy!"
+
+**OTHERS**
+
+- display error messages using response.end
+- all validation is server side validation
+
+**RECEIPTS**
+
+- use res.end to send html page containing:(use text e.g, Thanks for ordering 6 copies of xxxx at $12 per copy, your total bill is $76436.55 with tax)
+  • The book title
+  • The book price.
+  • The number of copies purchased.
+  • The total order cost.
+
+**ERROR HANDLING**
+
+- non-existent page "\*". "File Not Found"
+- any other error.res.status(404). "Server Error."
