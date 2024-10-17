@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Order</title>
+    <style>
+        form div {
+            display: flex;
+        }
+
+        form div>*:first-child {
+            margin-right: 10px;
+        }
+
+        form button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Order a Book</h1>
+    <form action="/order" method="POST">
+        <div>
+            <select name="isbn" id="isbn" required>
+                <option value="none">Select a Book</option>
+                <option value="9781638087809">Things We Hide from the Light</option>
+                <option value="9781638089162">Things We Left Behind</option>
+                <option value="9781945631832">Things We Never Got Over</option>
+            </select>
+            <div>
+                <label for="copies">Copies:</label>
+                <input type="number" name="copies" id="copies">
+            </div>
+        </div>
+
+        <button type="submit">Purchase</button>
+    </form>
+    <p><i>Copyright <b>Mamatha Bugata</i></b></p>
+</body>
+
+</html>
