@@ -20,8 +20,14 @@ function validateParams(request, response, next) {
   if (isbn === "none") {
     return response.end("<h1>Must select a book.</h1>");
   }
-  if (!copies || isNaN(copies) || copies < 1) {
+  const copiesNumber = Number(copies);
+
+  if (!copies || isNaN(copiesNumber) || copiesNumber < 1) {
     return response.end("<h1>Must purchase at least one copy!</h1>");
+  }
+
+  if (!Number.isInteger(copiesNumber)) {
+    return response.end("<h1>Number of copies must be a whole number!</h1>");
   }
 
   next();
