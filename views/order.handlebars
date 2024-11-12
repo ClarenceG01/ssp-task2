@@ -1,0 +1,15 @@
+<!-- views/order.handlebars -->
+<h2>Order a Book</h2>
+<form action="/order" method="POST">
+  <label for="isbn">Select a Book:</label>
+  <select name="isbn" id="isbn">
+    <option value="none">Select a Book</option>
+    {{#each books}}
+      <option value="{{isbn}}">{{title}}</option>
+    {{/each}}
+  </select>
+
+  <label for="copies">Number of Copies:</label>
+  <input type="text" name="copies" id="copies" value="{{copies}}" />
+  <button type="submit">Purchase</button>
+</form>

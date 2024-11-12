@@ -1,0 +1,21 @@
+<!-- views/books.handlebars -->
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr style="border-bottom: 1px solid #ddd;">
+      <th style="padding: 8px;">Cover</th>
+      <th style="padding: 8px;">Title</th>
+      <th style="padding: 8px;">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each books}}
+      <tr style="border-bottom: 1px solid #ddd;">
+        <td style="padding: 8px; text-align: center;">
+          <img src="{{image}}" alt="Cover of {{title}}" width="100" />
+        </td>
+        <td style="padding: 8px;">{{title}}</td>
+        <td style="padding: 8px;">${{price}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -68,3 +68,39 @@
 
 - non-existent page "\*". "File Not Found"
 - any other error.res.status(404). "Server Error."
+
+**ASSIGNMENT 3**
+
+_View Books Page_
+-home page for site
+-displays the three books in a table
+-same page is displayed when View Books is clicked
+-books are dynamically generated from calling the function
+
+-each book: title, price, cover image
+-pass list of books to handlebars view that loops to display each book
+
+_Book order page_
+-transform order form to handlebars view
+-books in form are dynamic from function, use them in options, using ISBN of book as the option value, and title
+-add first option, outside the loop, with value 'none' or 0, "Select a book"
+
+_Order Receipt_
+-should display as table:
+• An image of the book cover.
+• The title of the book.
+• The price of the book.
+• The number of copies ordered.
+• The total price including tax (as in the previous assignment).
+
+_Validation_
+-user must select a book
+-user must enter a legal value for the number of copies
+
+-these errors are displayed on the same page:
+•create a list of errors found during validation
+•if error, redisplay the order page passing the errors
+•The order page should have conditional outputs for the messages, displayed if that particular error value is true in the list.
+
+**All validation on server side**
+**Echoing the number of copies not understood**
